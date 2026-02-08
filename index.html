@@ -7,7 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;800&family=Abril+Fatface&display=swap" rel="stylesheet">
-    
+
     <!-- Firebase -->
     <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-database-compat.js"></script>
@@ -50,16 +50,18 @@
             height: 100%;
             z-index: 0;
             opacity: 0.03;
-            background: 
-                radial-gradient(circle at 20% 50%, var(--primary) 0%, transparent 50%),
-                radial-gradient(circle at 80% 80%, var(--secondary) 0%, transparent 50%),
-                radial-gradient(circle at 40% 20%, var(--accent) 0%, transparent 50%);
+            background: radial-gradient(circle at 20% 50%, var(--primary) 0%, transparent 50%), radial-gradient(circle at 80% 80%, var(--secondary) 0%, transparent 50%), radial-gradient(circle at 40% 20%, var(--accent) 0%, transparent 50%);
             animation: bgShift 20s ease infinite;
         }
 
         @keyframes bgShift {
-            0%, 100% { transform: scale(1) rotate(0deg); }
-            50% { transform: scale(1.1) rotate(5deg); }
+            0%, 100% {
+                transform: scale(1) rotate(0deg);
+            }
+
+            50% {
+                transform: scale(1.1) rotate(5deg);
+            }
         }
 
         /* Main Container */
@@ -91,6 +93,7 @@
                 transform: translateX(100%);
                 opacity: 0;
             }
+
             to {
                 transform: translateX(0);
                 opacity: 1;
@@ -103,14 +106,14 @@
             background: linear-gradient(135deg, rgba(255, 0, 110, 0.1), rgba(131, 56, 236, 0.1));
         }
 
-        .sidebar-header h1 {
-            font-family: 'Abril Fatface', cursive;
-            font-size: 28px;
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            margin-bottom: 5px;
-        }
+            .sidebar-header h1 {
+                font-family: 'Abril Fatface', cursive;
+                font-size: 28px;
+                background: linear-gradient(135deg, var(--primary), var(--secondary));
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                margin-bottom: 5px;
+            }
 
         .online-status {
             display: flex;
@@ -130,8 +133,15 @@
         }
 
         @keyframes pulse {
-            0%, 100% { opacity: 1; transform: scale(1); }
-            50% { opacity: 0.5; transform: scale(1.2); }
+            0%, 100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+
+            50% {
+                opacity: 0.5;
+                transform: scale(1.2);
+            }
         }
 
         /* Users List */
@@ -142,23 +152,23 @@
             padding: 15px 0;
         }
 
-        .users-list::-webkit-scrollbar {
-            width: 12px;
-        }
+            .users-list::-webkit-scrollbar {
+                width: 12px;
+            }
 
-        .users-list::-webkit-scrollbar-track {
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 10px;
-        }
+            .users-list::-webkit-scrollbar-track {
+                background: rgba(255, 255, 255, 0.05);
+                border-radius: 10px;
+            }
 
-        .users-list::-webkit-scrollbar-thumb {
-            background: rgba(255, 0, 110, 0.4);
-            border-radius: 10px;
-        }
+            .users-list::-webkit-scrollbar-thumb {
+                background: rgba(255, 0, 110, 0.4);
+                border-radius: 10px;
+            }
 
-        .users-list::-webkit-scrollbar-thumb:hover {
-            background: rgba(255, 0, 110, 0.6);
-        }
+                .users-list::-webkit-scrollbar-thumb:hover {
+                    background: rgba(255, 0, 110, 0.6);
+                }
 
         .user-item {
             padding: 15px 20px;
@@ -171,15 +181,15 @@
             position: relative;
         }
 
-        .user-item:hover {
-            background: rgba(255, 255, 255, 0.05);
-            border-right-color: var(--primary);
-        }
+            .user-item:hover {
+                background: rgba(255, 255, 255, 0.05);
+                border-right-color: var(--primary);
+            }
 
-        .user-item.active {
-            background: rgba(255, 0, 110, 0.1);
-            border-right-color: var(--primary);
-        }
+            .user-item.active {
+                background: rgba(255, 0, 110, 0.1);
+                border-right-color: var(--primary);
+            }
 
         .user-avatar {
             width: 48px;
@@ -195,17 +205,17 @@
             position: relative;
         }
 
-        .user-avatar::after {
-            content: '';
-            position: absolute;
-            bottom: 2px;
-            left: 2px;
-            width: 12px;
-            height: 12px;
-            background: var(--success);
-            border: 2px solid var(--sidebar-bg);
-            border-radius: 50%;
-        }
+            .user-avatar::after {
+                content: '';
+                position: absolute;
+                bottom: 2px;
+                left: 2px;
+                width: 12px;
+                height: 12px;
+                background: var(--success);
+                border: 2px solid var(--sidebar-bg);
+                border-radius: 50%;
+            }
 
         .user-info {
             flex: 1;
@@ -242,6 +252,9 @@
             display: flex;
             flex-direction: column;
             position: relative;
+            height: 100vh; /* ارتفاع الشاشة كله */
+            min-width: 0;
+            overflow: hidden; /* يخلي السكرول جوه مش بره */
         }
 
         .chat-header {
@@ -259,6 +272,7 @@
                 transform: translateY(-100%);
                 opacity: 0;
             }
+
             to {
                 transform: translateY(0);
                 opacity: 1;
@@ -293,36 +307,37 @@
         /* Messages Area */
         .messages-area {
             flex: 1;
-            overflow-y: scroll !important;
+            overflow-y: auto; /* السكرول هنا جوه الشات */
             overflow-x: hidden;
-            padding: 30px;
+            padding: 20px 30px 100px 30px; /* padding-bottom عشان الانبوت الفيكسد */
             display: flex;
             flex-direction: column;
-            gap: 20px;
+            gap: 15px;
             scroll-behavior: smooth;
-            height: 100%;
+            min-height: 0;
+            position: relative;
         }
 
-        .messages-area::-webkit-scrollbar {
-            width: 16px;
-        }
+            .messages-area::-webkit-scrollbar {
+                width: 16px;
+            }
 
-        .messages-area::-webkit-scrollbar-track {
-            background: rgba(255, 255, 255, 0.08);
-            border-radius: 10px;
-            margin: 10px 0;
-        }
+            .messages-area::-webkit-scrollbar-track {
+                background: rgba(255, 255, 255, 0.08);
+                border-radius: 10px;
+                margin: 10px 0;
+            }
 
-        .messages-area::-webkit-scrollbar-thumb {
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            border-radius: 10px;
-            border: 3px solid var(--chat-bg);
-        }
+            .messages-area::-webkit-scrollbar-thumb {
+                background: linear-gradient(135deg, var(--primary), var(--secondary));
+                border-radius: 10px;
+                border: 3px solid var(--chat-bg);
+            }
 
-        .messages-area::-webkit-scrollbar-thumb:hover {
-            background: linear-gradient(135deg, var(--secondary), var(--primary));
-            box-shadow: 0 0 15px rgba(255, 0, 110, 0.6);
-        }
+                .messages-area::-webkit-scrollbar-thumb:hover {
+                    background: linear-gradient(135deg, var(--secondary), var(--primary));
+                    box-shadow: 0 0 15px rgba(255, 0, 110, 0.6);
+                }
 
         /* For Firefox */
         .messages-area {
@@ -344,6 +359,7 @@
                 transform: translateY(20px);
                 opacity: 0;
             }
+
             to {
                 transform: translateY(0);
                 opacity: 1;
@@ -424,9 +440,9 @@
             transition: transform 0.3s ease;
         }
 
-        .message-image:hover {
-            transform: scale(1.02);
-        }
+            .message-image:hover {
+                transform: scale(1.02);
+            }
 
         /* Sticker */
         .message-sticker {
@@ -437,9 +453,17 @@
         }
 
         @keyframes stickerPop {
-            0% { transform: scale(0) rotate(-180deg); }
-            50% { transform: scale(1.2) rotate(10deg); }
-            100% { transform: scale(1) rotate(0deg); }
+            0% {
+                transform: scale(0) rotate(-180deg);
+            }
+
+            50% {
+                transform: scale(1.2) rotate(10deg);
+            }
+
+            100% {
+                transform: scale(1) rotate(0deg);
+            }
         }
 
         .message-sticker:hover {
@@ -448,12 +472,17 @@
 
         /* Input Area */
         .input-area {
-            padding: 20px 30px;
-            background: rgba(255, 255, 255, 0.02);
+            position: sticky; /* sticky بدل fixed عشان يبقى جوه الشات */
+            bottom: 0;
+            padding: 15px 20px;
+            background: rgba(26, 27, 38, 0.98);
             border-top: 1px solid rgba(255, 255, 255, 0.08);
             display: flex;
-            gap: 12px;
+            gap: 10px;
             align-items: center;
+            z-index: 100;
+            backdrop-filter: blur(10px);
+            flex-shrink: 0; /* مينكمشش */
         }
 
         .input-wrapper {
@@ -475,15 +504,15 @@
             font-weight: 500;
         }
 
-        #messageInput:focus {
-            border-color: var(--primary);
-            background: rgba(255, 255, 255, 0.12);
-            box-shadow: 0 0 0 3px rgba(255, 0, 110, 0.1);
-        }
+            #messageInput:focus {
+                border-color: var(--primary);
+                background: rgba(255, 255, 255, 0.12);
+                box-shadow: 0 0 0 3px rgba(255, 0, 110, 0.1);
+            }
 
-        #messageInput::placeholder {
-            color: #B0B3C1;
-        }
+            #messageInput::placeholder {
+                color: #B0B3C1;
+            }
 
         .input-actions {
             position: absolute;
@@ -509,10 +538,10 @@
             transition: all 0.3s ease;
         }
 
-        .input-btn:hover {
-            background: var(--primary);
-            transform: scale(1.1) rotate(10deg);
-        }
+            .input-btn:hover {
+                background: var(--primary);
+                transform: scale(1.1) rotate(10deg);
+            }
 
         .send-btn {
             width: 50px;
@@ -530,20 +559,20 @@
             box-shadow: 0 4px 15px rgba(255, 0, 110, 0.3);
         }
 
-        .send-btn:hover {
-            transform: scale(1.1) rotate(15deg);
-            box-shadow: 0 6px 25px rgba(255, 0, 110, 0.5);
-        }
+            .send-btn:hover {
+                transform: scale(1.1) rotate(15deg);
+                box-shadow: 0 6px 25px rgba(255, 0, 110, 0.5);
+            }
 
-        .send-btn:active {
-            transform: scale(0.95);
-        }
+            .send-btn:active {
+                transform: scale(0.95);
+            }
 
         /* Sticker Picker */
         .sticker-picker {
             position: absolute;
             bottom: 70px;
-            left: 30px;
+            left: 20px;
             background: var(--sidebar-bg);
             border: 1px solid rgba(255, 255, 255, 0.1);
             border-radius: 15px;
@@ -553,6 +582,14 @@
             gap: 10px;
             box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
             animation: popIn 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            z-index: 101;
+        }
+
+        @media (max-width: 768px) {
+            .sticker-picker {
+                left: 10px;
+                right: 10px;
+            }
         }
 
         @keyframes popIn {
@@ -560,6 +597,7 @@
                 transform: scale(0.8);
                 opacity: 0;
             }
+
             to {
                 transform: scale(1);
                 opacity: 1;
@@ -579,10 +617,10 @@
             border-radius: 8px;
         }
 
-        .sticker-item:hover {
-            transform: scale(1.3);
-            background: rgba(255, 255, 255, 0.05);
-        }
+            .sticker-item:hover {
+                transform: scale(1.3);
+                background: rgba(255, 255, 255, 0.05);
+            }
 
         /* Typing Indicator */
         .typing-indicator {
@@ -596,10 +634,10 @@
             width: fit-content;
         }
 
-        .typing-indicator.active {
-            display: flex;
-            animation: messageSlide 0.3s ease;
-        }
+            .typing-indicator.active {
+                display: flex;
+                animation: messageSlide 0.3s ease;
+            }
 
         .typing-dot {
             width: 8px;
@@ -609,17 +647,22 @@
             animation: typingDot 1.4s infinite;
         }
 
-        .typing-dot:nth-child(2) {
-            animation-delay: 0.2s;
-        }
+            .typing-dot:nth-child(2) {
+                animation-delay: 0.2s;
+            }
 
-        .typing-dot:nth-child(3) {
-            animation-delay: 0.4s;
-        }
+            .typing-dot:nth-child(3) {
+                animation-delay: 0.4s;
+            }
 
         @keyframes typingDot {
-            0%, 60%, 100% { transform: translateY(0); }
-            30% { transform: translateY(-10px); }
+            0%, 60%, 100% {
+                transform: translateY(0);
+            }
+
+            30% {
+                transform: translateY(-10px);
+            }
         }
 
         /* Hidden file input */
@@ -637,9 +680,9 @@
                 transition: right 0.3s ease;
             }
 
-            .sidebar.active {
-                right: 0;
-            }
+                .sidebar.active {
+                    right: 0;
+                }
 
             .message {
                 max-width: 85%;
@@ -710,8 +753,13 @@
         }
 
         @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
         }
 
         .welcome-icon {
@@ -720,8 +768,13 @@
         }
 
         @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-20px); }
+            0%, 100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-20px);
+            }
         }
 
         .welcome-text {
@@ -770,75 +823,75 @@
             margin: auto;
         }
 
-        .modal::-webkit-scrollbar {
-            width: 12px;
-        }
+            .modal::-webkit-scrollbar {
+                width: 12px;
+            }
 
-        .modal::-webkit-scrollbar-track {
-            background: rgba(255, 255, 255, 0.08);
-            border-radius: 10px;
-        }
+            .modal::-webkit-scrollbar-track {
+                background: rgba(255, 255, 255, 0.08);
+                border-radius: 10px;
+            }
 
-        .modal::-webkit-scrollbar-thumb {
-            background: var(--primary);
-            border-radius: 10px;
-        }
+            .modal::-webkit-scrollbar-thumb {
+                background: var(--primary);
+                border-radius: 10px;
+            }
 
-        .modal::-webkit-scrollbar-thumb:hover {
-            background: var(--secondary);
-        }
+                .modal::-webkit-scrollbar-thumb:hover {
+                    background: var(--secondary);
+                }
 
-        .modal h2 {
-            font-family: 'Abril Fatface', cursive;
-            font-size: 32px;
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            margin-bottom: 10px;
-            text-align: center;
-        }
+            .modal h2 {
+                font-family: 'Abril Fatface', cursive;
+                font-size: 32px;
+                background: linear-gradient(135deg, var(--primary), var(--secondary));
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                margin-bottom: 10px;
+                text-align: center;
+            }
 
-        .modal p {
-            color: var(--gray);
-            text-align: center;
-            margin-bottom: 30px;
-        }
+            .modal p {
+                color: var(--gray);
+                text-align: center;
+                margin-bottom: 30px;
+            }
 
         .input-group {
             margin-bottom: 20px;
         }
 
-        .input-group label {
-            display: block;
-            margin-bottom: 8px;
-            color: var(--light);
-            font-weight: 600;
-        }
+            .input-group label {
+                display: block;
+                margin-bottom: 8px;
+                color: var(--light);
+                font-weight: 600;
+            }
 
-        .input-group input,
-        .input-group select {
-            width: 100%;
-            padding: 14px 18px;
-            background: rgba(255, 255, 255, 0.05);
-            border: 2px solid rgba(255, 255, 255, 0.1);
-            border-radius: 12px;
-            color: var(--light);
-            font-size: 15px;
-            font-family: 'Cairo', sans-serif;
-            outline: none;
-            transition: all 0.3s ease;
-        }
+            .input-group input,
+            .input-group select {
+                width: 100%;
+                padding: 14px 18px;
+                background: rgba(255, 255, 255, 0.05);
+                border: 2px solid rgba(255, 255, 255, 0.1);
+                border-radius: 12px;
+                color: var(--light);
+                font-size: 15px;
+                font-family: 'Cairo', sans-serif;
+                outline: none;
+                transition: all 0.3s ease;
+            }
 
-        .input-group input:focus,
-        .input-group select:focus {
-            border-color: var(--primary);
-            background: rgba(255, 255, 255, 0.08);
-        }
+                .input-group input:focus,
+                .input-group select:focus {
+                    border-color: var(--primary);
+                    background: rgba(255, 255, 255, 0.08);
+                }
 
-        .input-group select option {
-            background: var(--sidebar-bg);
-            color: var(--light);
-        }
+                .input-group select option {
+                    background: var(--sidebar-bg);
+                    color: var(--light);
+                }
 
         .btn-primary {
             width: 100%;
@@ -855,14 +908,14 @@
             box-shadow: 0 4px 15px rgba(255, 0, 110, 0.3);
         }
 
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 25px rgba(255, 0, 110, 0.5);
-        }
+            .btn-primary:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 6px 25px rgba(255, 0, 110, 0.5);
+            }
 
-        .btn-primary:active {
-            transform: translateY(0);
-        }
+            .btn-primary:active {
+                transform: translateY(0);
+            }
 
         .avatar-selector {
             display: grid;
@@ -874,23 +927,23 @@
             padding: 5px;
         }
 
-        .avatar-selector::-webkit-scrollbar {
-            width: 10px;
-        }
+            .avatar-selector::-webkit-scrollbar {
+                width: 10px;
+            }
 
-        .avatar-selector::-webkit-scrollbar-track {
-            background: rgba(255, 255, 255, 0.08);
-            border-radius: 10px;
-        }
+            .avatar-selector::-webkit-scrollbar-track {
+                background: rgba(255, 255, 255, 0.08);
+                border-radius: 10px;
+            }
 
-        .avatar-selector::-webkit-scrollbar-thumb {
-            background: var(--primary);
-            border-radius: 10px;
-        }
+            .avatar-selector::-webkit-scrollbar-thumb {
+                background: var(--primary);
+                border-radius: 10px;
+            }
 
-        .avatar-selector::-webkit-scrollbar-thumb:hover {
-            background: var(--secondary);
-        }
+                .avatar-selector::-webkit-scrollbar-thumb:hover {
+                    background: var(--secondary);
+                }
 
         .avatar-option {
             font-size: 32px;
@@ -906,15 +959,15 @@
             justify-content: center;
         }
 
-        .avatar-option:hover {
-            background: rgba(255, 255, 255, 0.05);
-            transform: scale(1.1);
-        }
+            .avatar-option:hover {
+                background: rgba(255, 255, 255, 0.05);
+                transform: scale(1.1);
+            }
 
-        .avatar-option.selected {
-            border-color: var(--primary);
-            background: rgba(255, 0, 110, 0.1);
-        }
+            .avatar-option.selected {
+                border-color: var(--primary);
+                background: rgba(255, 0, 110, 0.1);
+            }
 
         .rooms-grid {
             display: grid;
@@ -926,23 +979,23 @@
             padding: 5px;
         }
 
-        .rooms-grid::-webkit-scrollbar {
-            width: 10px;
-        }
+            .rooms-grid::-webkit-scrollbar {
+                width: 10px;
+            }
 
-        .rooms-grid::-webkit-scrollbar-track {
-            background: rgba(255, 255, 255, 0.08);
-            border-radius: 10px;
-        }
+            .rooms-grid::-webkit-scrollbar-track {
+                background: rgba(255, 255, 255, 0.08);
+                border-radius: 10px;
+            }
 
-        .rooms-grid::-webkit-scrollbar-thumb {
-            background: var(--primary);
-            border-radius: 10px;
-        }
+            .rooms-grid::-webkit-scrollbar-thumb {
+                background: var(--primary);
+                border-radius: 10px;
+            }
 
-        .rooms-grid::-webkit-scrollbar-thumb:hover {
-            background: var(--secondary);
-        }
+                .rooms-grid::-webkit-scrollbar-thumb:hover {
+                    background: var(--secondary);
+                }
 
         .room-card {
             padding: 20px;
@@ -954,16 +1007,16 @@
             text-align: center;
         }
 
-        .room-card:hover {
-            border-color: var(--primary);
-            background: rgba(255, 0, 110, 0.05);
-            transform: translateY(-3px);
-        }
+            .room-card:hover {
+                border-color: var(--primary);
+                background: rgba(255, 0, 110, 0.05);
+                transform: translateY(-3px);
+            }
 
-        .room-card.selected {
-            border-color: var(--primary);
-            background: rgba(255, 0, 110, 0.1);
-        }
+            .room-card.selected {
+                border-color: var(--primary);
+                background: rgba(255, 0, 110, 0.1);
+            }
 
         .room-icon {
             font-size: 40px;
@@ -990,13 +1043,13 @@
             margin-bottom: 20px;
         }
 
-        .user-badge .avatar {
-            font-size: 20px;
-        }
+            .user-badge .avatar {
+                font-size: 20px;
+            }
 
-        .user-badge .name {
-            font-weight: 600;
-        }
+            .user-badge .name {
+                font-weight: 600;
+            }
 
         .logout-btn {
             background: rgba(255, 255, 255, 0.05);
@@ -1009,11 +1062,12 @@
             transition: all 0.3s ease;
         }
 
-        .logout-btn:hover {
-            background: rgba(255, 0, 0, 0.1);
-            border-color: #ff0000;
-        }
+            .logout-btn:hover {
+                background: rgba(255, 0, 0, 0.1);
+                border-color: #ff0000;
+            }
     </style>
+    <base target="_blank">
 </head>
 <body>
     <div class="bg-animation"></div>
@@ -1023,7 +1077,7 @@
         <div class="modal">
             <h2>اهلاً بيك! 👋</h2>
             <p>اختار اسمك وأفاتار عشان تبدأ</p>
-            
+
             <div class="input-group">
                 <label>اسمك ايه؟</label>
                 <input type="text" id="usernameInput" placeholder="اكتب اسمك هنا..." />
@@ -1064,10 +1118,10 @@
                 </div>
                 <button class="logout-btn" id="logoutBtn">تسجيل خروج</button>
             </div>
-            
+
             <h2>اختار روم 🎯</h2>
             <p>اختار الروم اللي عايز تدخله وتكلم الناس فيه</p>
-            
+
             <div class="rooms-grid" id="roomsGrid">
                 <div class="room-card" data-room="عام">
                     <div class="room-icon">💬</div>
@@ -1102,7 +1156,7 @@
             </div>
         </div>
     </div>
-    
+
     <div class="chat-container" id="chatContainer" style="display: none;">
         <!-- Chat Area -->
         <div class="chat-area">
@@ -1112,7 +1166,7 @@
                 <p class="welcome-subtitle">اختار أي حد من القائمة عشان تبدأ المحادثة</p>
             </div>
 
-            <div id="chatContent" style="display: none; flex: 1; display: flex; flex-direction: column;">
+            <div id="chatContent" style="display: none; flex: 1; flex-direction: column; height: 100%; overflow: hidden;">
                 <div class="chat-header">
                     <div class="current-chat-avatar" id="currentAvatar">🎭</div>
                     <div class="current-chat-info">
@@ -1267,6 +1321,9 @@
                 id: Date.now().toString()
             };
 
+            // Save user data for auto-login
+            saveUserData(currentUser);
+
             userAvatarBadge.textContent = selectedAvatar;
             userNameBadge.textContent = username;
 
@@ -1285,6 +1342,7 @@
                 leaveRoom();
             }
             currentUser = null;
+            clearUserData(); // Clear saved user data
             roomModal.style.display = 'none';
             loginModal.style.display = 'flex';
             chatContainer.style.display = 'none';
@@ -1314,6 +1372,16 @@
             roomModal.style.display = 'none';
             chatContainer.style.display = 'flex';
             roomTitle.textContent = `${roomName} 💬`;
+
+            // Show chat content and hide welcome screen
+            const chatContent = document.getElementById('chatContent');
+            const welcomeScreen = document.getElementById('welcomeScreen');
+            if (chatContent) {
+                chatContent.style.display = 'flex';
+            }
+            if (welcomeScreen) {
+                welcomeScreen.style.display = 'none';
+            }
 
             // Add user to room
             const userRef = database.ref(`rooms/${currentRoom}/users/${currentUser.id}`);
@@ -1366,6 +1434,16 @@
             currentRoom = null;
             messagesArea.innerHTML = '';
             usersList.innerHTML = '';
+
+            // Hide chat content and show welcome screen
+            const chatContent = document.getElementById('chatContent');
+            const welcomeScreen = document.getElementById('welcomeScreen');
+            if (chatContent) {
+                chatContent.style.display = 'none';
+            }
+            if (welcomeScreen) {
+                welcomeScreen.style.display = 'flex';
+            }
         }
 
         // ========================================
@@ -1373,7 +1451,7 @@
         // ========================================
         function listenToMessages() {
             messagesListener = database.ref(`rooms/${currentRoom}/messages`);
-            
+
             messagesListener.on('child_added', (snapshot) => {
                 const message = snapshot.val();
                 addMessageToUI(message, snapshot.key);
@@ -1403,7 +1481,7 @@
         // ========================================
         function listenToUsers() {
             usersListener = database.ref(`rooms/${currentRoom}/users`);
-            
+
             usersListener.on('value', (snapshot) => {
                 const users = snapshot.val();
                 updateUsersList(users);
@@ -1421,16 +1499,16 @@
                 Object.entries(users).forEach(([id, user]) => {
                     count++;
                     const isCurrentUser = id === currentUser.id;
-                    
+
                     const userItem = document.createElement('div');
                     userItem.className = 'user-item';
                     userItem.innerHTML = `
-                        <div class="user-avatar">${user.avatar}</div>
-                        <div class="user-info">
-                            <div class="user-name">${user.name}${isCurrentUser ? ' (أنت)' : ''}</div>
-                            <div class="user-message">متصل الآن</div>
-                        </div>
-                    `;
+                            <div class="user-avatar">${user.avatar}</div>
+                            <div class="user-info">
+                                <div class="user-name">${user.name}${isCurrentUser ? ' (أنت)' : ''}</div>
+                                <div class="user-message">متصل الآن</div>
+                            </div>
+                        `;
                     usersList.appendChild(userItem);
                 });
             }
@@ -1455,7 +1533,7 @@
         // Send Message
         // ========================================
         let isSending = false;
-        
+
         function sendMessage() {
             const text = messageInput.value.trim();
             if (!text || !currentRoom || isSending) return;
@@ -1473,7 +1551,7 @@
 
             database.ref(`rooms/${currentRoom}/messages`).push(message);
             messageInput.value = '';
-            
+
             setTimeout(() => {
                 isSending = false;
             }, 500);
@@ -1564,16 +1642,16 @@
             }
 
             messageDiv.innerHTML = `
-                <div class="message-avatar">${message.userAvatar}</div>
-                <div class="message-content">
-                    <div style="font-size: 13px; color: #E0E2F0; margin-bottom: 6px; font-weight: 600;">${message.userName}</div>
-                    ${content}
-                    <div class="message-time">${time}</div>
-                </div>
-            `;
+                    <div class="message-avatar">${message.userAvatar}</div>
+                    <div class="message-content">
+                        <div style="font-size: 13px; color: #E0E2F0; margin-bottom: 6px; font-weight: 600;">${message.userName}</div>
+                        ${content}
+                        <div class="message-time">${time}</div>
+                    </div>
+                `;
 
             messagesArea.appendChild(messageDiv);
-            
+
             if (shouldScroll) {
                 scrollToBottom();
             }
@@ -1602,6 +1680,76 @@
                 "'": '&#039;'
             };
             return text.replace(/[&<>"']/g, m => map[m]);
+        }
+
+        // ========================================
+        // Notification Sound
+        // ========================================
+        const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+
+        function playNotificationSound() {
+            try {
+                const oscillator = audioContext.createOscillator();
+                const gainNode = audioContext.createGain();
+
+                oscillator.connect(gainNode);
+                gainNode.connect(audioContext.destination);
+
+                oscillator.frequency.value = 800;
+                oscillator.type = 'sine';
+
+                gainNode.gain.setValueAtTime(0.3, audioContext.currentTime);
+                gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 0.3);
+
+                oscillator.start(audioContext.currentTime);
+                oscillator.stop(audioContext.currentTime + 0.3);
+            } catch (e) {
+                console.log('Sound play failed:', e);
+            }
+        }
+
+        // ========================================
+        // localStorage Functions
+        // ========================================
+        function saveUserData(user) {
+            try {
+                localStorage.setItem('chatUser', JSON.stringify(user));
+            } catch (e) {
+                console.log('Failed to save user data:', e);
+            }
+        }
+
+        function loadUserData() {
+            try {
+                const data = localStorage.getItem('chatUser');
+                return data ? JSON.parse(data) : null;
+            } catch (e) {
+                console.log('Failed to load user data:', e);
+                return null;
+            }
+        }
+
+        function clearUserData() {
+            try {
+                localStorage.removeItem('chatUser');
+            } catch (e) {
+                console.log('Failed to clear user data:', e);
+            }
+        }
+
+        // ========================================
+        // Auto-login Check
+        // ========================================
+        function checkAutoLogin() {
+            const savedUser = loadUserData();
+            if (savedUser) {
+                currentUser = savedUser;
+                userAvatarBadge.textContent = savedUser.avatar;
+                userNameBadge.textContent = savedUser.name;
+                loginModal.style.display = 'none';
+                roomModal.style.display = 'flex';
+                updateRoomCounts();
+            }
         }
 
         // ========================================
@@ -1652,6 +1800,13 @@
             if (e.key === 'Enter') {
                 loginBtn.click();
             }
+        });
+
+        // ========================================
+        // Initialize - Check for auto-login on page load
+        // ========================================
+        document.addEventListener('DOMContentLoaded', () => {
+            checkAutoLogin();
         });
     </script>
 </body>
